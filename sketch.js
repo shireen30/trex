@@ -91,14 +91,14 @@ function draw() {
       ground.x = ground.width/2;
     }
   
-    if(score>0 && score%100 === 0)
-    {
-      checkPointSound.play();
-    }
-    
+   
     trex.collide(invisibleGround);
     spawnClouds();
     spawnObstacles();
+    
+      if (score>0 && score%100 === 0){
+      checkPointSound.play();
+    }
   
     if(obstaclesGroup.isTouching(trex)){
         gameState = END;

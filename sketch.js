@@ -92,7 +92,9 @@ function draw() {
     }
   
     if(score>0 && score%100==0)
-      checkPointScore.play();
+      checkPointSound.play();
+    
+    
     trex.collide(invisibleGround);
     spawnClouds();
     spawnObstacles();

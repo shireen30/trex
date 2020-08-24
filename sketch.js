@@ -91,9 +91,10 @@ function draw() {
       ground.x = ground.width/2;
     }
   
-    if(score>0 && score%100==0)
+    if(score>0 && score%100 === 0)
+    {
       checkPointSound.play();
-    
+    }
     
     trex.collide(invisibleGround);
     spawnClouds();

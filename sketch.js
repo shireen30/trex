@@ -79,6 +79,7 @@ function draw() {
   
     if(keyDown("space") && trex.y >= 159) {
       trex.velocityY = -12;
+      jumpSound.play();
     }
   
     trex.velocityY = trex.velocityY + 0.8
@@ -87,12 +88,15 @@ function draw() {
       ground.x = ground.width/2;
     }
   
+    if(score>0 && score%100==0)
+      checkPointScore.play();
     trex.collide(invisibleGround);
     spawnClouds();
     spawnObstacles();
   
     if(obstaclesGroup.isTouching(trex)){
         gameState = END;
+      dieSound.play();
     }
   }
   else if (gameState === END) {
